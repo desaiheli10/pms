@@ -35,8 +35,7 @@ public class AllProductsActivity extends ListActivity {
     ArrayList<HashMap<String, String>> productsList;
 
     // url to get all products list
-    private static String url_all_products = "http://api.androidhive.info/android_connect/get_all_products.php";
-
+    private static String url_all_products = "http://192.168.173.1:80/android_connect/get_all_products.php";
     // JSON Node names
     private static final String TAG_SUCCESS = "success";
     private static final String TAG_PRODUCTS = "products";
@@ -52,7 +51,7 @@ public class AllProductsActivity extends ListActivity {
         setContentView(R.layout.all_products);
 
         // Hashmap for ListView
-        productsList = new ArrayList<HashMap<String, String>>();
+        productsList = new ArrayList<HashMap<String,String>>();
 
         // Loading products in Background Thread
         new LoadAllProducts().execute();
@@ -124,9 +123,9 @@ public class AllProductsActivity extends ListActivity {
         protected String doInBackground(String... args) {
             // Building Parameters
             //List<NameValuePair> params = new ArrayList<NameValuePair>();
-            //ContentValues cv = new ContentValues();
+            HashMap<String, String> params = new HashMap<String, String>();
             // getting JSON string from URL
-            JSONObject json = jParser.makeHttpRequest(url_all_products, "GET", cv);
+            JSONObject json = jParser.makeHttpRequest(url_all_products, "GET", params);
 
             // Check your log cat for JSON reponse
             Log.d("All Products: ", json.toString());
