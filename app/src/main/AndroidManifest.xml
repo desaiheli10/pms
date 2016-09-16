@@ -22,6 +22,18 @@
             android:label="All Product">
 
         </activity>
+
+        <activity
+            android:name=".NewProductActivity"
+            android:label="New Product">
+
+        </activity>
+
+        <activity
+            android:name=".AddDriveActivity"
+            android:label="Add Drive">
+
+        </activity>
     </application>
 
     <uses-permission android:name="android.permission.INTERNET" />

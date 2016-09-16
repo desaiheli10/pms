@@ -7,7 +7,7 @@
     <!-- Name Label -->
     <TextView android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Product Name"
+        android:text="Drive Name"
         android:paddingLeft="10dip"
         android:paddingRight="10dip"
         android:paddingTop="10dip"
@@ -24,7 +24,7 @@
     <!-- Price Label -->
     <TextView android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Price"
+        android:text="Post"
         android:paddingLeft="10dip"
         android:paddingRight="10dip"
         android:paddingTop="10dip"
@@ -36,31 +36,123 @@
         android:layout_height="wrap_content"
         android:layout_margin="5dip"
         android:layout_marginBottom="15dip"
-        android:singleLine="true"
-        android:inputType="numberDecimal"/>
+        android:singleLine="true" />
 
     <!-- Description Label -->
-    <TextView android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Description"
-        android:paddingLeft="10dip"
-        android:paddingRight="10dip"
-        android:paddingTop="10dip"
-        android:textSize="17dip"/>
 
     <!-- Input description -->
-    <EditText android:id="@+id/inputDesc"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dip"
-        android:layout_marginBottom="15dip"
-        android:lines="4"
-        android:gravity="top"/>
 
     <!-- Button Create Product -->
-    <Button android:id="@+id/btnCreateProduct"
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Domain"
+        android:id="@+id/textView" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Salary"
+        android:id="@+id/textView2" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/editText2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bond(Years)"
+        android:id="@+id/textView3" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/editText3" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date "
+        android:id="@+id/textView4" />
+
+    <DatePicker
+        android:layout_width="159dp"
+        android:layout_height="102dp"
+        android:id="@+id/datePicker" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Location"
+        android:id="@+id/textView5" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText4" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Allowed Branches"
+        android:id="@+id/textView6" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CE"
+        android:id="@+id/checkBox"
+        android:layout_gravity="center_horizontal"
+        android:checked="false" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="10th Criteria(min)"
+        android:id="@+id/textView7" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="12th Criteria(min)"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CPI(min)"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"/>
+
+    <Button android:id="@+id/btnCreateDrive"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Create Product"/>
+        android:text="Add Company"/>
 
 </LinearLayout>

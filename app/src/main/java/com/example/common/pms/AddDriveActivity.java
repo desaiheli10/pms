@@ -20,7 +20,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class NewProductActivity extends Activity {
+public class AddDriveActivity extends Activity {
 
     // Progress Dialog
     private ProgressDialog pDialog;
@@ -32,7 +32,7 @@ public class NewProductActivity extends Activity {
     EditText inputCont;
 
     // url to create new product
-    private static String url_create_product = "http://192.168.2.5:80/android_connect/add_company.php";
+    private static String url_create_product = "http://192.168.2.5:80/android_connect/add_drive.php";
 
     // JSON Node names
     private static final String TAG_SUCCESS = "success";
@@ -40,24 +40,22 @@ public class NewProductActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.add_company);
+        setContentView(R.layout.add_drive);
 
         // Edit Text
         inputName = (EditText) findViewById(R.id.inputName);
         inputPrice = (EditText) findViewById(R.id.inputPrice);
-        inputDesc = (EditText) findViewById(R.id.inputDesc);
-        inputCont = (EditText) findViewById(R.id.inputCont);
 
         // Create button
-        Button btnCreateProduct = (Button) findViewById(R.id.btnCreateProduct);
+        Button btnCreateDrive = (Button) findViewById(R.id.btnCreateDrive);
 
         // button click event
-        btnCreateProduct.setOnClickListener(new View.OnClickListener() {
+        btnCreateDrive.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
                 // creating new product in background thread
-                new CreateNewProduct().execute(inputName.getText().toString(),inputPrice.getText().toString(),inputDesc.getText().toString(),inputCont.getText().toString());
+                new CreateNewDrive().execute(inputName.getText().toString(),inputPrice.getText().toString());
 
             }
         });
@@ -66,7 +64,7 @@ public class NewProductActivity extends Activity {
     /**
      * Background Async Task to Create new product
      * */
-    class CreateNewProduct extends AsyncTask<String, String, String> {
+    class CreateNewDrive extends AsyncTask<String, String, String> {
 
         /**
          * Before starting background thread Show Progress Dialog
@@ -74,7 +72,7 @@ public class NewProductActivity extends Activity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            pDialog = new ProgressDialog(NewProductActivity.this);
+            pDialog = new ProgressDialog(AddDriveActivity.this);
             pDialog.setMessage("Creating Product..");
             pDialog.setIndeterminate(false);
             pDialog.setCancelable(true);
@@ -108,8 +106,6 @@ public class NewProductActivity extends Activity {
             LinkedHashMap<String,String> params = new LinkedHashMap<String, String>();
             params.put("com",args[0]);
             params.put("type",args[1]);
-            params.put("emp",args[2]);
-            params.put("contact", args[3]);
             // getting JSON Object
             // Note that create product url accepts POST method
 
