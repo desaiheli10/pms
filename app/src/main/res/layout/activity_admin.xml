@@ -17,7 +17,7 @@
     <Button android:id="@+id/btnCreateProduct"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Add student"
+        android:text="Add Company"
         android:layout_marginTop="25dip"/>
 
     <Button android:id="@+id/btnCreateDrive"

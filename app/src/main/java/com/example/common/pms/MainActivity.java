@@ -1,75 +1,41 @@
 package com.example.common.pms;
 
-import android.support.v7.app.ActionBarActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.widget.Button;
-import android.content.Intent;
 import android.view.View;
-import android.app.Activity;
+import android.widget.Button;
 
-
+/**
+ * Created by JigarSoni on 9/25/2016.
+ */
 public class MainActivity extends AppCompatActivity {
 
-    Button btnViewProducts;
-    Button btnNewProduct;
-    Button btnNewDrive;
-
+    Button btnViewAdmin;
+    Button btnViewStudent;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.login_choice);
 
-        btnViewProducts = (Button) findViewById(R.id.btnViewProducts);
-        btnNewProduct = (Button) findViewById(R.id.btnCreateProduct);
-        btnNewDrive = (Button) findViewById(R.id.btnCreateDrive);
+        btnViewAdmin = (Button)findViewById(R.id.btnLogin);
 
-        btnViewProducts.setOnClickListener(new View.OnClickListener(){
+        btnViewAdmin.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                Intent i = new Intent(getApplicationContext(),AllProductsActivity.class);
+                Intent i = new Intent(getApplicationContext(),AdminLogin.class);
                 startActivity(i);
             }
         });
 
-        btnNewProduct.setOnClickListener(new View.OnClickListener(){
-            @Override
-        public void onClick(View view){
-                Intent i = new Intent(getApplicationContext(),NewProductActivity.class);
-                startActivity(i);
-            }
-        });
+        btnViewStudent = (Button)findViewById(R.id.btnLogin1);
 
-        btnNewDrive.setOnClickListener(new View.OnClickListener(){
+        btnViewStudent.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                Intent i = new Intent(getApplicationContext(),AddDriveActivity.class);
+                Intent i = new Intent(getApplicationContext(),StudentHome.class);
                 startActivity(i);
             }
         });
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 }

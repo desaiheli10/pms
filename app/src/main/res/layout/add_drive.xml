@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical" >
 
     <!-- Name Label -->
@@ -86,10 +91,25 @@
         android:text="Date "
         android:id="@+id/textView4" />
 
+    <Button
+        android:id="@+id/changeDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pick_date" />
+
+    <TextView
+        android:id="@+id/Output"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="" />
+
     <DatePicker
-        android:layout_width="159dp"
-        android:layout_height="102dp"
-        android:id="@+id/datePicker" />
+        android:id="@+id/datePicker1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -112,6 +132,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="CE"
+        android:onClick="onCheckboxClicked"
         android:id="@+id/checkBox"
         android:layout_gravity="center_horizontal"
         android:checked="false" />
@@ -126,7 +147,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="number"
-        android:ems="10"/>
+        android:ems="10"
+        android:id="@+id/inputCriteriatwo"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -137,7 +159,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="number"
-        android:ems="10"/>
+        android:ems="10"
+        android:id="@+id/inputCriteriaone" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -148,7 +171,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="number"
-        android:ems="10"/>
+        android:ems="10"
+        android:id="@+id/inputCpi"/>
 
     <Button android:id="@+id/btnCreateDrive"
         android:layout_width="fill_parent"
@@ -156,3 +180,5 @@
         android:text="Add Company"/>
 
 </LinearLayout>
+
+</ScrollView>
