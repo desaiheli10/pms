@@ -10,14 +10,19 @@
     <Button android:id="@+id/btnViewProducts"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="View Products"
+        android:text="View Students"
         android:layout_marginTop="25dip"/>
 
     <!--  Button to create a new product screen -->
     <Button android:id="@+id/btnCreateProduct"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Add New Products"
+        android:text="Add Company"
         android:layout_marginTop="25dip"/>
 
+    <Button android:id="@+id/btnCreateDrive"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Drive"
+        android:layout_marginTop="25dip" />
 </LinearLayout>

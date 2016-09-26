@@ -2,6 +2,7 @@ package com.example.common.pms;
 
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.StringTokenizer;
@@ -24,15 +25,17 @@ import android.widget.EditText;
 public class NewProductActivity extends Activity {
 
     // Progress Dialog
-   /* private ProgressDialog pDialog;
+   private ProgressDialog pDialog;
 
     JSONParser jsonParser = new JSONParser();
     EditText inputName;
     EditText inputPrice;
     EditText inputDesc;
+    EditText inputCont;
 
     // url to create new product
     private static String url_create_product = "http://192.168.2.16:81/android_connect/add_company.php";
+
 
     // JSON Node names
     private static final String TAG_SUCCESS = "success";
@@ -40,12 +43,13 @@ public class NewProductActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.add_drive);
+        setContentView(R.layout.add_company);
 
         // Edit Text
         inputName = (EditText) findViewById(R.id.inputName);
         inputPrice = (EditText) findViewById(R.id.inputPrice);
         inputDesc = (EditText) findViewById(R.id.inputDesc);
+        inputCont = (EditText) findViewById(R.id.inputCont);
 
         // Create button
         Button btnCreateProduct = (Button) findViewById(R.id.btnCreateProduct);
@@ -56,7 +60,8 @@ public class NewProductActivity extends Activity {
             @Override
             public void onClick(View view) {
                 // creating new product in background thread
-                new CreateNewProduct().execute();
+                new CreateNewProduct().execute(inputName.getText().toString(),inputPrice.getText().toString(),inputDesc.getText().toString(),inputCont.getText().toString());
+
             }
         });
     }
@@ -64,12 +69,12 @@ public class NewProductActivity extends Activity {
     /**
      * Background Async Task to Create new product
      * */
-    /* class CreateNewProduct extends AsyncTask<String, String, String> {
+     class CreateNewProduct extends AsyncTask<String, String, String> {
 
         /**
          * Before starting background thread Show Progress Dialog
          * */
-      /*  @Override
+       @Override
         protected void onPreExecute() {
             super.onPreExecute();
             pDialog = new ProgressDialog(NewProductActivity.this);
@@ -86,19 +91,21 @@ public class NewProductActivity extends Activity {
         /**
          * Creating product
          * */
-   /* protected String doInBackground(String... args) {
 
-            // Building Parameters
-            LinkedHashMap<String,String> params = new LinkedHashMap<String,String>();
-            params.put("name", name);
-            params.put("price", price);
-            params.put("description", description);
-            params.put("", );
+   protected String doInBackground(String... args) {
 
+            LinkedHashMap<String,String> params = new LinkedHashMap<String, String>();
+            params.put("com",args[0]);
+            params.put("type",args[1]);
+            params.put("emp",args[2]);
+            params.put("contact", args[3]);
             // getting JSON Object
             // Note that create product url accepts POST method
+
+            //Log.d(args[0],"msg");
             JSONObject json = jsonParser.makeHttpRequest(url_create_product,
                     "POST", params);
+
 
             // check log cat fro response
             Log.d("Create Response", json.toString());
@@ -127,10 +134,10 @@ public class NewProductActivity extends Activity {
         /**
          * After completing background task Dismiss the progress dialog
          * **/
-     /*   protected void onPostExecute(String file_url) {
+        protected void onPostExecute(String file_url) {
             // dismiss the dialog once done
             pDialog.dismiss();
         }
 
-    } */
+    }
 }

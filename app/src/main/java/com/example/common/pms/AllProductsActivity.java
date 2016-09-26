@@ -35,7 +35,9 @@ public class AllProductsActivity extends ListActivity {
     ArrayList<HashMap<String, String>> productsList;
 
     // url to get all products list
+
     private static String url_all_products = "http://192.168.2.8:81/android_connect/get_all_products.php";
+
     // JSON Node names
     private static final String TAG_SUCCESS = "success";
     private static final String TAG_PRODUCTS = "products";
@@ -59,7 +61,7 @@ public class AllProductsActivity extends ListActivity {
         // Get listview
         ListView lv = getListView();
 
-        // on seleting single product
+        // on selecting single product
         // launching Edit Product Screen
         lv.setOnItemClickListener(new OnItemClickListener() {
 

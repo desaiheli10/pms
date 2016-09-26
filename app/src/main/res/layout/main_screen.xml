@@ -2,22 +2,29 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical"
-    android:gravity="center_horizontal">
+    android:gravity="center_horizontal"
+    android:weightSum="1"
+    android:orientation="vertical">
 
     <!--  Sample Dashboard screen with Two buttons -->
     <!--  Button to view all products screen -->
     <Button android:id="@+id/btnViewProducts"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="View Products"
+        android:text="View students"
         android:layout_marginTop="25dip"/>
 
     <!--  Button to create a new product screen -->
     <Button android:id="@+id/btnCreateProduct"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Add New Products"
+        android:text="Add company"
         android:layout_marginTop="25dip"/>
+
+    <Button android:id="@id/btnCreateDrive"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Drive"
+        android:layout_marginTop="25dip" />
 
 </LinearLayout>

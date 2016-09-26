@@ -18,6 +18,6 @@ public class ViewDriveActivity extends ListActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.get_drives);
 
-        driveList = new ArrayList<HashMap<String,String>>()
+        driveList = new ArrayList<HashMap<String,String>>();
     }
 }

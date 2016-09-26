@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical" >
 
     <!-- Name Label -->
     <TextView android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Name"
+        android:text="Drive Name"
         android:paddingLeft="10dip"
         android:paddingRight="10dip"
         android:paddingTop="10dip"
@@ -24,7 +29,7 @@
     <!-- Price Label -->
     <TextView android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Type"
+        android:text="Post"
         android:paddingLeft="10dip"
         android:paddingRight="10dip"
         android:paddingTop="10dip"
@@ -36,25 +41,12 @@
         android:layout_height="wrap_content"
         android:layout_margin="5dip"
         android:layout_marginBottom="15dip"
-        android:singleLine="true"/>
+
+        android:singleLine="true" />
 
     <!-- Description Label -->
-    <TextView android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Employees"
-        android:paddingLeft="10dip"
-        android:paddingRight="10dip"
-        android:paddingTop="10dip"
-        android:textSize="17dip"/>
 
     <!-- Input description -->
-    <EditText android:id="@+id/inputDesc"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dip"
-        android:layout_marginBottom="15dip"
-        android:lines="4"
-        android:gravity="top"/>
 
     <TextView android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -74,9 +66,138 @@
         android:gravity="top"/>
 
     <!-- Button Create Product -->
-    <Button android:id="@+id/btnCreateProduct"
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Domain"
+        android:id="@+id/textView" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Salary"
+        android:id="@+id/textView2" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/editText2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bond(Years)"
+        android:id="@+id/textView3" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/editText3" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date "
+        android:id="@+id/textView4" />
+
+    <Button
+        android:id="@+id/changeDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pick_date" />
+
+    <TextView
+        android:id="@+id/Output"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="" />
+
+    <DatePicker
+        android:id="@+id/datePicker1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Location"
+        android:id="@+id/textView5" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText4" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Allowed Branches"
+        android:id="@+id/textView6" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CE"
+        android:onClick="onCheckboxClicked"
+        android:id="@+id/checkBox"
+        android:layout_gravity="center_horizontal"
+        android:checked="false" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="10th Criteria(min)"
+        android:id="@+id/textView7" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/inputCriteriatwo"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="12th Criteria(min)"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/inputCriteriaone" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CPI(min)"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/inputCpi"/>
+
+    <Button android:id="@+id/btnCreateDrive"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Add Company"/>
 
+
 </LinearLayout>
+
+</ScrollView>
