@@ -1,7 +1,10 @@
 package com.example.common.pms;
 
+
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.StringTokenizer;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
@@ -21,7 +24,7 @@ import android.widget.EditText;
 public class NewProductActivity extends Activity {
 
     // Progress Dialog
-    private ProgressDialog pDialog;
+   /* private ProgressDialog pDialog;
 
     JSONParser jsonParser = new JSONParser();
     EditText inputName;
@@ -29,7 +32,7 @@ public class NewProductActivity extends Activity {
     EditText inputDesc;
 
     // url to create new product
-    private static String url_create_product = "http://192.168.173.1:80/android_connect/create_product.php";
+    private static String url_create_product = "http://192.168.2.16:81/android_connect/add_company.php";
 
     // JSON Node names
     private static final String TAG_SUCCESS = "success";
@@ -61,12 +64,12 @@ public class NewProductActivity extends Activity {
     /**
      * Background Async Task to Create new product
      * */
-    class CreateNewProduct extends AsyncTask<String, String, String> {
+    /* class CreateNewProduct extends AsyncTask<String, String, String> {
 
         /**
          * Before starting background thread Show Progress Dialog
          * */
-        @Override
+      /*  @Override
         protected void onPreExecute() {
             super.onPreExecute();
             pDialog = new ProgressDialog(NewProductActivity.this);
@@ -75,19 +78,22 @@ public class NewProductActivity extends Activity {
             pDialog.setCancelable(true);
             pDialog.show();
         }
+        String name = inputName.getText().toString();
+        String price = inputPrice.getText().toString();
+        String description = inputDesc.getText().toString();
+
 
         /**
          * Creating product
          * */
-        protected String doInBackground(String... args) {
-            String username = args[0];
-            String pass = args[1];
-            
+   /* protected String doInBackground(String... args) {
+
             // Building Parameters
-            List<NameValuePair> params = new ArrayList<NameValuePair>();
-            params.add(new BasicNameValuePair("name", name));
-            params.add(new BasicNameValuePair("price", price));
-            params.add(new BasicNameValuePair("description", description));
+            LinkedHashMap<String,String> params = new LinkedHashMap<String,String>();
+            params.put("name", name);
+            params.put("price", price);
+            params.put("description", description);
+            params.put("", );
 
             // getting JSON Object
             // Note that create product url accepts POST method
@@ -121,10 +127,10 @@ public class NewProductActivity extends Activity {
         /**
          * After completing background task Dismiss the progress dialog
          * **/
-        protected void onPostExecute(String file_url) {
+     /*   protected void onPostExecute(String file_url) {
             // dismiss the dialog once done
             pDialog.dismiss();
         }
 
-    }
+    } */
 }

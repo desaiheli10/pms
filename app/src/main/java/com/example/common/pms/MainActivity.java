@@ -2,6 +2,7 @@ package com.example.common.pms;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
@@ -10,7 +11,7 @@ import android.view.View;
 import android.app.Activity;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends AppCompatActivity {
 
     Button btnViewProducts;
     Button btnNewProduct;
