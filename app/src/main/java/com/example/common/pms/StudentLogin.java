@@ -141,7 +141,7 @@ public class StudentLogin extends Activity {
 
                         // Launch main activity
                         Intent intent = new Intent(StudentLogin.this,
-                                StudentHome.class);
+                                StudentLogout.class);
                         startActivity(intent);
                         finish();
                     } else {

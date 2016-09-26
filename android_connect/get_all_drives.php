@@ -18,6 +18,7 @@ if (mysqli_connect_errno($con))
 {
 	echo "Failed to connect " . mysqli_connect_error();
 }	
+
 // get all students from student table
 $result = mysqli_query($con,"SELECT * FROM drive_details");
  
