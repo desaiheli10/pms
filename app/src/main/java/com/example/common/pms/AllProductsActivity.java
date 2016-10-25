@@ -35,7 +35,7 @@ public class AllProductsActivity extends ListActivity {
     ArrayList<HashMap<String, String>> productsList;
 
     // url to get all products list
-    private static String url_all_products = "http://192.168.2.7:80/android_connect/get_all_products.php";
+
     // JSON Node names
     private static final String TAG_SUCCESS = "success";
     private static final String TAG_PRODUCTS = "products";
@@ -125,7 +125,7 @@ public class AllProductsActivity extends ListActivity {
             //List<NameValuePair> params = new ArrayList<NameValuePair>();
             HashMap<String, String> params = new HashMap<String, String>();
             // getting JSON string from URL
-            JSONObject json = jParser.makeHttpRequest(url_all_products, "GET", params);
+            JSONObject json = jParser.makeHttpRequest(AppConfig.URL_ALL_PRODUCT, "GET", params);
 
             // Check your log cat for JSON reponse
             Log.d("All Products: ", json.toString());

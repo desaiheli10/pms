@@ -85,7 +85,7 @@ public class StudentLogin extends Activity {
 
         });
 
-        /* Link to Register Screen
+         /*Link to Register Screen
         btnLinkToRegister.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View view) {
@@ -130,14 +130,15 @@ public class StudentLogin extends Activity {
                         String uid = jObj.getString("uid");
 
                         JSONObject user = jObj.getJSONObject("user");
-                        String name = user.getString("name");
+                        String name = user.getString("fname");
                         String email = user.getString("email");
-                        String created_at = user
-                                .getString("created_at" +
-                                        "");
+                        //String created_at = user.getString("created_at" + "");
+                        String bdate = user.getString("birthdate");
+                        String branch = user.getString("branch");
+                        String cpi = user.getString("CPI");
 
                         // Inserting row in users table
-                        db.addUser(name, email, uid,created_at);
+                        db.addUser(name, email, bdate, branch, cpi);
 
                         // Launch main activity
                         Intent intent = new Intent(StudentLogin.this,
