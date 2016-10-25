@@ -36,7 +36,7 @@ public class AllProductsActivity extends ListActivity {
 
     // url to get all products list
 
-    private static String url_all_products = "http://192.168.2.8:81/android_connect/get_all_products.php";
+    private static String url_all_products = "http://192.168.43.107:81/android_connect/get_all_products.php";
 
     // JSON Node names
     private static final String TAG_SUCCESS = "success";

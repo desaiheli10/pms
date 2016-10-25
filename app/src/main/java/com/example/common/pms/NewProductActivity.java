@@ -34,7 +34,7 @@ public class NewProductActivity extends Activity {
     EditText inputCont;
 
     // url to create new product
-    private static String url_create_product = "http://192.168.2.16:81/android_connect/add_company.php";
+    private static String url_create_product = "http://192.168.43.107:81/android_connect/add_company.php";
 
 
     // JSON Node names

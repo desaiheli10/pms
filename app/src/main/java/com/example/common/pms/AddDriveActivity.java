@@ -60,7 +60,7 @@ public class AddDriveActivity extends FragmentActivity {
         }
     }
     // url to create new product
-    private static String url_create_product = "http://192.168.43.207:80/android_connect/add_drive.php";
+    private static String url_create_product = "http://192.168.43.107:81/android_connect/add_drive.php";
 
     // JSON Node names
     private static final String TAG_SUCCESS = "success";
