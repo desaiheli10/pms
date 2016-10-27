@@ -29,13 +29,13 @@
 
         </activity>
         <activity
-            android:name=".AllProductsActivity"
+            android:name=".ViewStudents"
             android:label="All Product">
 
         </activity>
 
         <activity
-            android:name=".NewProductActivity"
+            android:name=".AddCompany"
             android:label="New Product">
 
         </activity>

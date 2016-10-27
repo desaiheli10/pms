@@ -2,16 +2,13 @@ package com.example.common.pms;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
-import org.apache.http.NameValuePair;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.app.ListActivity;
 import android.app.ProgressDialog;
-import android.content.ContentValues;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -24,7 +21,7 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
-public class AllProductsActivity extends ListActivity {
+public class ViewStudents extends ListActivity {
 
     // Progress Dialog
     private ProgressDialog pDialog;
@@ -110,7 +107,7 @@ public class AllProductsActivity extends ListActivity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            pDialog = new ProgressDialog(AllProductsActivity.this);
+            pDialog = new ProgressDialog(ViewStudents.this);
             pDialog.setMessage("Loading products. Please wait...");
             pDialog.setIndeterminate(false);
             pDialog.setCancelable(false);
@@ -161,7 +158,7 @@ public class AllProductsActivity extends ListActivity {
                     // no products found
                     // Launch Add New product Activity
                     Intent i = new Intent(getApplicationContext(),
-                            NewProductActivity.class);
+                            AddCompany.class);
                     // Closing all previous activities
                     i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(i);
@@ -186,7 +183,7 @@ public class AllProductsActivity extends ListActivity {
                      * Updating parsed JSON data into ListView
                      * */
                     ListAdapter adapter = new SimpleAdapter(
-                            AllProductsActivity.this, productsList,
+                            ViewStudents.this, productsList,
                             R.layout.list_item, new String[] { TAG_PID,
                             TAG_NAME},
                             new int[] { R.id.pid, R.id.name });

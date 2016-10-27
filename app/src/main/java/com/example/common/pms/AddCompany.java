@@ -1,12 +1,7 @@
 package com.example.common.pms;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
-import java.util.List;
 
-import org.apache.http.NameValuePair;
-import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -20,7 +15,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class NewProductActivity extends Activity {
+public class AddCompany extends Activity {
 
     // Progress Dialog
     private ProgressDialog pDialog;
@@ -74,7 +69,7 @@ public class NewProductActivity extends Activity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            pDialog = new ProgressDialog(NewProductActivity.this);
+            pDialog = new ProgressDialog(AddCompany.this);
             pDialog.setMessage("Creating Product..");
             pDialog.setIndeterminate(false);
             pDialog.setCancelable(true);
@@ -127,7 +122,7 @@ public class NewProductActivity extends Activity {
 
                 if (success == 1) {
                     // successfully created product
-                    Intent i = new Intent(getApplicationContext(), AllProductsActivity.class);
+                    Intent i = new Intent(getApplicationContext(), ViewStudents.class);
                     startActivity(i);
 
                     // closing this screen

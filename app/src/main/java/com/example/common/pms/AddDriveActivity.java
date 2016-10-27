@@ -1,28 +1,22 @@
 package com.example.common.pms;
 
-import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
-import java.util.List;
 
 
-import org.apache.http.NameValuePair;
-import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.app.Activity;
-import android.app.DatePickerDialog;
-import android.app.Dialog;
-import android.app.DialogFragment;
-import android.app.Fragment;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
+import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -125,6 +119,12 @@ public class AddDriveActivity extends FragmentActivity {
             }
         });
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
     public String getCurrentDate(){
         StringBuilder builder=new StringBuilder();
         builder.append("Current Date: ");
@@ -132,6 +132,23 @@ public class AddDriveActivity extends FragmentActivity {
         builder.append(picker.getDayOfMonth()+"/");
         builder.append(picker.getYear());
         return builder.toString();
+    }
+
+    public void createNotification(View view){
+        Intent intent = new Intent(getApplicationContext(),AdminHome.class);
+        PendingIntent pIntent = PendingIntent.getActivity(this, 0, intent, 0);
+
+        Notification noti = new Notification.Builder(this)
+                .setContentTitle("New Campus Drive is Arriving")
+                .setContentText("Click to See")
+                .setSmallIcon(R.drawable.ddu_logo)
+                .setContentIntent(pIntent)
+                .build();
+
+        NotificationManager nm = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
+        noti.flags |= Notification.FLAG_AUTO_CANCEL;
+
+        nm.notify(0, noti);
     }
 
     /**
@@ -206,8 +223,9 @@ public class AddDriveActivity extends FragmentActivity {
 
                 if (success == 1) {
                     // successfully created product
-                    Intent i = new Intent(getApplicationContext(), AllProductsActivity.class);
-                    startActivity(i);
+                    //Intent i = new Intent(getApplicationContext(), MyNotification.class);
+                    //startActivity(i);
+                    startService(new Intent(AddDriveActivity.this, MyNotification.class));
 
                     // closing this screen
                     finish();

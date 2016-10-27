@@ -18,7 +18,7 @@ public class SQLiteHandler extends SQLiteOpenHelper {
 
     // All Static variables
     // Database Version
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
 
     // Database Name
     private static final String DATABASE_NAME = "android_api";
@@ -28,7 +28,7 @@ public class SQLiteHandler extends SQLiteOpenHelper {
 
     // Login Table Columns names
     private static final String KEY_ID = "id";
-    private static final String KEY_NAME = "fname";
+    private static final String KEY_NAME = "name";
     private static final String KEY_EMAIL = "email";
     private static final String KEY_BDATE = "birthdate";
     private static final String KEY_BRANCH = "branch";
@@ -96,7 +96,7 @@ public class SQLiteHandler extends SQLiteOpenHelper {
             user.put("email", cursor.getString(2));
             user.put("branch", cursor.getString(3));
             user.put("cpi",cursor.getString(4));
-            user.put("birthdate", "9/9/95");
+            user.put("birthdate", cursor.getString(5));
         }
         cursor.close();
         db.close();

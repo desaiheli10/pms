@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.example.common.helper.*;
+import com.example.common.helper.SQLiteHandler;
 
 import java.util.HashMap;
 
@@ -12,7 +13,7 @@ import java.util.HashMap;
  * Created by JigarSoni on 9/26/2016.
  */
 public class ViewProfileActivity extends Activity{
-    private SQLiteHandler db;
+    private com.example.common.helper.SQLiteHandler db;
     private SessionManager session;
     private TextView txtName;
     private TextView txtEmail;
@@ -43,6 +44,7 @@ public class ViewProfileActivity extends Activity{
         String bdate = user.get("birthdate");
         String branch = user.get("branch");
         String cpi = user.get("cpi");
+
 
         // Displaying the user details on the screen
         txtName.setText(name);

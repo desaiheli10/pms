@@ -1,8 +1,6 @@
 package com.example.common.pms;
 
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
@@ -29,7 +27,7 @@ public class AdminHome extends Activity {
         btnViewProducts.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                Intent i = new Intent(getApplicationContext(),AllProductsActivity.class);
+                Intent i = new Intent(getApplicationContext(),ViewStudents.class);
                 startActivity(i);
             }
         });
@@ -37,7 +35,7 @@ public class AdminHome extends Activity {
         btnNewProduct.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                Intent i = new Intent(getApplicationContext(),NewProductActivity.class);
+                Intent i = new Intent(getApplicationContext(),AddCompany.class);
                 startActivity(i);
             }
         });
