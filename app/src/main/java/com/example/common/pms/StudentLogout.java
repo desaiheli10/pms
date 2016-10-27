@@ -19,9 +19,11 @@ public class StudentLogout extends AppCompatActivity{
     private TextView txtName;
     private TextView txtEmail;
     private Button btnLogout;
-
+    private Button btnViewProfile;
+    private Button btnViewDrive;
     private SQLiteHandler db;
     private SessionManager session;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +39,27 @@ public class StudentLogout extends AppCompatActivity{
 
         // session manager
         session = new SessionManager(getApplicationContext());
+
+        btnViewProfile = (Button) findViewById(R.id.btnViewProfile);
+
+        btnViewProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(), ViewProfileActivity.class);
+                startActivity(i);
+            }
+
+        });
+
+        btnViewDrive = (Button) findViewById(R.id.btnViewDrives);
+
+        btnViewDrive.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(), ViewDrivesActivity.class);
+                startActivity(i);
+            }
+        });
 
         if (!session.isLoggedIn()) {
             logoutUser();

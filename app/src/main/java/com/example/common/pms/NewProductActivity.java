@@ -33,9 +33,6 @@ public class NewProductActivity extends Activity {
     EditText inputDesc;
     EditText inputCont;
 
-    // url to create new product
-    private static String url_create_product = "http://192.168.43.107:81/android_connect/add_company.php";
-
 
     // JSON Node names
     private static final String TAG_SUCCESS = "success";
@@ -103,7 +100,7 @@ public class NewProductActivity extends Activity {
             // Note that create product url accepts POST method
 
             //Log.d(args[0],"msg");
-            JSONObject json = jsonParser.makeHttpRequest(url_create_product,
+            JSONObject json = jsonParser.makeHttpRequest(AppConfig.url_create_product,
                     "POST", params);
 
 

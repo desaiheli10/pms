@@ -195,7 +195,7 @@
     <Button android:id="@+id/btnCreateDrive"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Add Company"/>
+        android:text="Add Drive"/>
 
 
 </LinearLayout>

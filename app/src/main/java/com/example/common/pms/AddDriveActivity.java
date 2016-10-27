@@ -60,7 +60,6 @@ public class AddDriveActivity extends FragmentActivity {
         }
     }
     // url to create new product
-    private static String url_create_product = "http://192.168.43.107:81/android_connect/add_drive.php";
 
     // JSON Node names
     private static final String TAG_SUCCESS = "success";
@@ -193,7 +192,7 @@ public class AddDriveActivity extends FragmentActivity {
             // Note that create product url accepts POST method
 
             //Log.d(args[0],"msg");
-            JSONObject json = jsonParser.makeHttpRequest(url_create_product,
+            JSONObject json = jsonParser.makeHttpRequest(AppConfig.URL_ADD_DRIVE,
                     "POST", params);
 
 
