@@ -7,7 +7,7 @@ public class AppConfig {
     // Server user login url
 
     //StringBuilder str = new StringBuilder("http://192.168.43.207");
-    static String IP_CONST = "http://192.168.43.107:81";
+    static String IP_CONST = "http://192.168.2.7:81";
     public static String URL_LOGIN = IP_CONST + "/android_connect/login.php";
     public static String URL_ADMIN_LOGIN = IP_CONST + "/android_connect/admin_login.php";
     public static String URL_ALL_PRODUCT = IP_CONST + "/android_connect/get_all_products.php";
