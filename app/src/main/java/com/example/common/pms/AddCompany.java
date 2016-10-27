@@ -1,6 +1,11 @@
 package com.example.common.pms;
 
+
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.StringTokenizer;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -18,15 +23,13 @@ import android.widget.EditText;
 public class AddCompany extends Activity {
 
     // Progress Dialog
-    private ProgressDialog pDialog;
+   private ProgressDialog pDialog;
 
     JSONParser jsonParser = new JSONParser();
     EditText inputName;
     EditText inputPrice;
     EditText inputDesc;
     EditText inputCont;
-
-    // url to create new product
 
 
     // JSON Node names
@@ -61,12 +64,12 @@ public class AddCompany extends Activity {
     /**
      * Background Async Task to Create new product
      * */
-    class CreateNewProduct extends AsyncTask<String, String, String> {
+     class CreateNewProduct extends AsyncTask<String, String, String> {
 
         /**
          * Before starting background thread Show Progress Dialog
          * */
-        @Override
+       @Override
         protected void onPreExecute() {
             super.onPreExecute();
             pDialog = new ProgressDialog(AddCompany.this);
@@ -75,30 +78,16 @@ public class AddCompany extends Activity {
             pDialog.setCancelable(true);
             pDialog.show();
         }
+        String name = inputName.getText().toString();
+        String price = inputPrice.getText().toString();
+        String description = inputDesc.getText().toString();
+
 
         /**
          * Creating product
          * */
-        protected String doInBackground(String... args) {
-         /*   runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    name=inputName.getText().toString();
-                    price =inputPrice.getText().toString();
-                    description = inputDesc.getText().toString();
 
-                }
-            }); */
-
-
-
-
-            // Building Parameters
-           /* List<NameValuePair> params = new ArrayList<NameValuePair>();
-            params.add(new BasicNameValuePair("name", name));
-            params.add(new BasicNameValuePair("price", price));
-            params.add(new BasicNameValuePair("description", description));
-            */
+   protected String doInBackground(String... args) {
 
             LinkedHashMap<String,String> params = new LinkedHashMap<String, String>();
             params.put("com",args[0]);

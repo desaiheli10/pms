@@ -41,11 +41,29 @@
         android:layout_height="wrap_content"
         android:layout_margin="5dip"
         android:layout_marginBottom="15dip"
+
         android:singleLine="true" />
 
     <!-- Description Label -->
 
     <!-- Input description -->
+
+    <TextView android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Contact"
+        android:paddingLeft="10dip"
+        android:paddingRight="10dip"
+        android:paddingTop="10dip"
+        android:textSize="17dip"/>
+
+    <!-- Input description -->
+    <EditText android:id="@+id/inputCont"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dip"
+        android:layout_marginBottom="15dip"
+        android:lines="4"
+        android:gravity="top"/>
 
     <!-- Button Create Product -->
     <TextView
@@ -170,14 +188,15 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="number"
+        android:inputType="numberDecimal"
         android:ems="10"
         android:id="@+id/inputCpi"/>
 
     <Button android:id="@+id/btnCreateDrive"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Add Company"/>
+        android:text="Add Drive"/>
+
 
 </LinearLayout>
 

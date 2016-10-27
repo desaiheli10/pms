@@ -2,6 +2,9 @@
     <string name="app_name">pms</string>
 
     <string name="hello_world">Hello world!</string>
+    <string name="view_profile">View Profile</string>
+    <string name="view_drives">VIEW DRIVES</string>
+    <string name="hello">Hello,</string>
     <string name="action_settings">Settings</string>
     <string name="pick_date">Select Date</string>
     <string name="hint_email">Email</string>

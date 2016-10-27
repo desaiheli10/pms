@@ -55,7 +55,6 @@ public class AddDriveActivity extends FragmentActivity {
     }
     // url to create new product
 
-
     // JSON Node names
     private static final String TAG_SUCCESS = "success";
     private TextView Output;

@@ -1,5 +1,11 @@
 package com.example.common.pms;
 
+import android.support.v7.app.ActionBarActivity;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.Button;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -7,9 +13,7 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 
-/**
- * Created by JigarSoni on 9/25/2016.
- */
+
 public class MainActivity extends AppCompatActivity {
 
     Button btnViewAdmin;
@@ -24,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         btnViewAdmin.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                Intent i = new Intent(getApplicationContext(),AdminLogin.class);
+                Intent i = new Intent(getApplicationContext(),AdminHome.class);
                 startActivity(i);
             }
         });

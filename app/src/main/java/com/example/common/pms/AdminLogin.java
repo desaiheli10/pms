@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -13,6 +14,7 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
+import com.example.common.helper.*;
 import com.example.common.helper.SessionManager;
 
 import org.json.JSONException;
@@ -25,10 +27,17 @@ import java.util.Map;
  * Created by JigarSoni on 9/26/2016.
  */
 public class AdminLogin extends Activity {
-    private TextView inputEmail;
-    private TextView inputPassword;
+
+    //private TextView txtName;
+    //private TextView txtEmail;
+    //private Button btnLogout;
     private Button btnLogin;
+    //private Button btnLinkToRegister;
+    private EditText inputEmail;
+    private EditText inputPassword;
     private ProgressDialog pDialog;
+    //private SessionManager session;
+    //private com.example.common.helper.SQLiteHandler db;
 
     private com.example.common.helper.SQLiteHandler db;
     private com.example.common.helper.SessionManager session;
@@ -38,15 +47,17 @@ public class AdminLogin extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.admin_login);
 
-        inputEmail = (TextView) findViewById(R.id.email);
-        inputPassword = (TextView) findViewById(R.id.password);
+        inputEmail = (EditText) findViewById(R.id.email);
+        inputPassword = (EditText) findViewById(R.id.password);
+
         btnLogin = (Button) findViewById(R.id.btnLogin);
 
         // SqLite database handler
-        db = new com.example.common.helper.SQLiteHandler(getApplicationContext());
+        pDialog = new ProgressDialog(this);
+        pDialog.setCancelable(false);
 
-        // session manager
         session = new SessionManager(getApplicationContext());
+
         if (session.isLoggedIn()) {
             // User is already logged in. Take him to main activity
             Intent intent = new Intent(AdminLogin.this, MainActivity.class);
@@ -54,17 +65,6 @@ public class AdminLogin extends Activity {
             finish();
         }
 
-        // Fetching user details from sqlite
-        HashMap<String, String> user = db.getUserDetails();
-
-        String name = user.get("name");
-        String email = user.get("email");
-
-        // Displaying the user details on the screen
-        inputEmail.setText(name);
-        inputPassword.setText(email);
-
-        // Logout button click event
         btnLogin.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View view) {
@@ -93,8 +93,9 @@ public class AdminLogin extends Activity {
         pDialog.setMessage("Logging in ...");
         showDialog();
 
+
         StringRequest strReq = new StringRequest(Request.Method.POST,
-                AppConfig.URL_LOGIN, new Response.Listener<String>() {
+                AppConfig.URL_ADMIN_LOGIN, new Response.Listener<String>() {
 
             @Override
             public void onResponse(String response) {
@@ -111,23 +112,9 @@ public class AdminLogin extends Activity {
                         // Create login session
                         session.setLogin(true);
 
-                        // Now store the user in SQLite
-                        String uid = jObj.getString("uid");
-
-                        JSONObject user = jObj.getJSONObject("user");
-                        String name = user.getString("fname");
-                        String email = user.getString("email");
-                        //String created_at = user.getString("created_at" + "");
-                        String bdate = user.getString("birthdate");
-                        String branch = user.getString("branch");
-                        String cpi = user.getString("CPI");
-
-                        // Inserting row in users table
-                        db.addUser(name, email, bdate, branch, cpi);
-
                         // Launch main activity
                         Intent intent = new Intent(AdminLogin.this,
-                                StudentLogout.class);
+                                AdminHome.class);
                         startActivity(intent);
                         finish();
                     } else {
@@ -169,7 +156,6 @@ public class AdminLogin extends Activity {
         // Adding request to request queue
         AppController.getInstance().addToRequestQueue(strReq, tag_string_req);
     }
-
     private void showDialog() {
         if (!pDialog.isShowing())
             pDialog.show();
@@ -178,6 +164,17 @@ public class AdminLogin extends Activity {
     private void hideDialog() {
         if (pDialog.isShowing())
             pDialog.dismiss();
+    }
+
+    private void logoutUser() {
+        session.setLogin(false);
+
+        db.deleteUsers();
+
+        // Launching the login activity
+        Intent intent = new Intent(getApplicationContext(), StudentLogin.class);
+        startActivity(intent);
+        finish();
     }
 }
 

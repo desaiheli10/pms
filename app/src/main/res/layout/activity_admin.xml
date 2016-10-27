@@ -25,4 +25,16 @@
         android:layout_height="wrap_content"
         android:text="Add Drive"
         android:layout_marginTop="25dip" />
+
+
+    <Button
+        android:id="@+id/btnLogout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dip"
+        android:background="@color/btn_logut_bg"
+        android:text="Logout"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="15dp" />
 </LinearLayout>
