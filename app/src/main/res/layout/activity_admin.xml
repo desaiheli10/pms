@@ -11,21 +11,39 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="View Students"
-        android:layout_marginTop="25dip"/>
+        android:layout_marginTop="40dip"
+        android:textColor="@color/white"
+        android:background="@color/btn_logut_bg"/>
 
     <!--  Button to create a new product screen -->
     <Button android:id="@+id/btnCreateProduct"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Add Company"
-        android:layout_marginTop="25dip"/>
+        android:layout_marginTop="40dip"
+        android:textColor="@color/white"
+        android:background="@color/btn_logut_bg"
+        />
 
     <Button android:id="@+id/btnCreateDrive"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Add Drive"
-        android:layout_marginTop="25dip" />
+        android:layout_marginTop="40dip"
+        android:textColor="@color/white"
+        android:background="@color/btn_logut_bg"
+        />
 
+    <Button
+        android:id="@+id/btngeteligibles"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dip"
+        android:background="@color/btn_logut_bg"
+        android:text="GET ELIGIBLES"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="15dp" />
 
     <Button
         android:id="@+id/btnLogout"

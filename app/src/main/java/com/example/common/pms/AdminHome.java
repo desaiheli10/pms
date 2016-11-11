@@ -18,6 +18,7 @@ public class AdminHome extends Activity {
     Button btnNewProduct;
     Button btnNewDrive;
     Button btnLogout;
+    Button btnGeteligible;
 
     private com.example.common.helper.SessionManager session;
 
@@ -31,6 +32,7 @@ public class AdminHome extends Activity {
         btnNewProduct = (Button) findViewById(R.id.btnCreateProduct);
         btnNewDrive = (Button) findViewById(R.id.btnCreateDrive);
         btnLogout = (Button) findViewById(R.id.btnLogout);
+        btnGeteligible = (Button) findViewById(R.id.btngeteligibles);
 
         btnViewProducts.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -56,6 +58,13 @@ public class AdminHome extends Activity {
             }
         });
 
+        btnGeteligible.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                Intent i = new Intent(getApplicationContext(),GetEligibles.class);
+                startActivity(i);
+            }
+        });
 
         if (!session.isLoggedIn()) {
             logoutUser();
